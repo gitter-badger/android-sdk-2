@@ -10,7 +10,7 @@ package co.omisego.omisego.model.transaction.consumption
 import android.support.test.runner.AndroidJUnit4
 import co.omisego.omisego.OMGAPIClient
 import co.omisego.omisego.extension.bd
-import co.omisego.omisego.model.MintedToken
+import co.omisego.omisego.model.Token
 import co.omisego.omisego.model.pagination.Paginable
 import co.omisego.omisego.model.transaction.list.Transaction
 import co.omisego.omisego.model.transaction.list.TransactionExchange
@@ -33,7 +33,7 @@ import java.util.Date
 @Config(sdk = [23])
 class TransactionConsumptionTest {
     private val mOMGAPIClient: OMGAPIClient by lazy { mock<OMGAPIClient>() }
-    val mintedToken = MintedToken("1234", "OMG", "OmiseGO", 10000.bd)
+    val mintedToken = Token("1234", "OMG", "OmiseGO", 10000.bd)
     private val mTransactionConsumption: TransactionConsumption by lazy {
         TransactionConsumption(
             "OMG-1234",
@@ -49,7 +49,7 @@ class TransactionConsumptionTest {
                 TransactionSource("3456", 3456.bd, mintedToken),
                 TransactionExchange(2.0),
                 mapOf("Test" to 1234),
-                Date(),
+                mapOf(),
                 Date()
             ),
             "1234",
